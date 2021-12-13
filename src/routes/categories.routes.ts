@@ -14,8 +14,8 @@ routes.get('/', (req, res) => {
 routes.post('/', (req, res) => {
   const { name, description } = req.body;
   const service = new CreateCategoryService(repository);
-  service.execute({ name, description });
-  return res.status(201).json({});
+  const category = service.execute({ name, description });
+  return res.status(201).json(category);
 });
 
 export default routes;

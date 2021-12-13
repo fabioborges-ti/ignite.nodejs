@@ -1,3 +1,4 @@
+import { Category } from 'src/model/Category';
 import { CategoryRepository } from '../repositories/CategoryRepository';
 
 interface IRequest {
@@ -8,12 +9,13 @@ interface IRequest {
 class CreateCategoryService {
   constructor(private repository: CategoryRepository) {}
 
-  execute({ name, description }: IRequest): void {
+  execute({ name, description }: IRequest): Category {
     const existsCategory = this.repository.findByName(name);
     if (existsCategory) {
       throw new Error('Category already exists.');
     }
-    this.repository.create({ name, description });
+    const category = this.repository.create({ name, description });
+    return category;
   }
 }
 
