@@ -19,6 +19,7 @@ class CategoryRepository implements ICategoryRepository {
     }
     return CategoryRepository.INSTANCE;
   }
+
   list(): Category[] {
     return this.categories;
   }
