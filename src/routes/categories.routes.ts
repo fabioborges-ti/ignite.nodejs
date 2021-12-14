@@ -1,7 +1,9 @@
 import { Router } from 'express';
-import CategoryController from '../modules/cars/controllers/CategoriesController';
+import { CategoryRepository } from '../modules/cars/repositories/CategoryRepository';
+import { CategoriesController } from '../modules/cars/controllers/CategoriesController';
 
-const controller = new CategoryController();
+const repository = new CategoryRepository();
+const controller = new CategoriesController(repository);
 
 const routes = Router();
 
