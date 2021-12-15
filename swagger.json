@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Ignite NodeJs",
+    "description": "Treinamento Rocketset",
+    "version": "1.0.0",
+    "contact": {
+      "email": "fabioborges.ti@gmail.com"
+    }
+  }
+}
